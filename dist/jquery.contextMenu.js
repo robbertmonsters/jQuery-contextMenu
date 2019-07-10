@@ -1977,6 +1977,7 @@
                     item = {
                         name: $node.text(),
                         disabled: !!$node.attr('disabled'),
+                        className: $node.attr('class'),
                         callback: (function () {
                             return function () {
                                 $node.get(0).click();
@@ -1996,6 +1997,7 @@
                                 name: $node.attr('label'),
                                 disabled: !!$node.attr('disabled'),
                                 icon: $node.attr('icon'),
+                                className: $node.attr('class'),
                                 callback: (function () {
                                     return function () {
                                         $node.get(0).click();
@@ -2009,6 +2011,7 @@
                                 type: 'checkbox',
                                 disabled: !!$node.attr('disabled'),
                                 name: $node.attr('label'),
+                                className: $node.attr('class'),
                                 selected: !!$node.attr('checked')
                             };
                             break;
@@ -2019,6 +2022,7 @@
                                 name: $node.attr('label'),
                                 radio: $node.attr('radiogroup'),
                                 value: $node.attr('id'),
+                                className: $node.attr('class'),
                                 selected: !!$node.attr('checked')
                             };
                             break;
@@ -2038,6 +2042,7 @@
                             item = {
                                 type: 'text',
                                 name: label || inputLabel(node),
+                                className: $node.attr('class'),
                                 disabled: !!$node.attr('disabled'),
                                 value: $node.val()
                             };
@@ -2047,6 +2052,7 @@
                             item = {
                                 type: 'checkbox',
                                 name: label || inputLabel(node),
+                                className: $node.attr('class'),
                                 disabled: !!$node.attr('disabled'),
                                 selected: !!$node.attr('checked')
                             };
@@ -2055,6 +2061,7 @@
                         case 'radio':
                             item = {
                                 type: 'radio',
+                                className: $node.attr('class'),
                                 name: label || inputLabel(node),
                                 disabled: !!$node.attr('disabled'),
                                 radio: !!$node.attr('name'),
@@ -2073,6 +2080,7 @@
                     item = {
                         type: 'select',
                         name: label || inputLabel(node),
+                        className: $node.attr('class'),
                         disabled: !!$node.attr('disabled'),
                         selected: $node.val(),
                         options: {}
@@ -2085,6 +2093,7 @@
                 case 'textarea':
                     item = {
                         type: 'textarea',
+                        className: $node.attr('class'),
                         name: label || inputLabel(node),
                         disabled: !!$node.attr('disabled'),
                         value: $node.val()
@@ -2092,6 +2101,7 @@
                     break;
 
                 case 'label':
+                    item = {className: $node.attr('class')}
                     break;
 
                 default:
