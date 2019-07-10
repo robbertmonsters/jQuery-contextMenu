@@ -1966,7 +1966,7 @@
             switch (nodeName) {
                 // http://www.whatwg.org/specs/web-apps/current-work/multipage/interactive-elements.html#the-menu-element
                 case 'menu':
-                    item = {name: $node.attr('label'), items: {}};
+                    item = {name: $node.attr('label'), className: $node.attr('class'), items: {}};
                     counter = menuChildren(item.items, $node.children(), counter);
                     break;
 
